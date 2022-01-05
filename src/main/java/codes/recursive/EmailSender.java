@@ -28,7 +28,7 @@ public class EmailSender {
             }
         };
         Session session = Session.getInstance(props, auth);
-
+        session.setDebug(true);
         EmailUtil.sendEmail(session, toEmail,"TLSEmail Testing Subject at " + LocalDateTime.now(), "TLSEmail Testing Body");
 
     }
