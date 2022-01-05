@@ -1,0 +1,29 @@
+plugins {
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+mainClassName = 'codes.recursive.Demo'
+
+repositories { 
+    mavenCentral() 
+}
+
+jar {
+    archiveBaseName = 'javamail-demo'
+    archiveVersion =  '0.0.1'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    implementation 'com.sun.mail:javax.mail:1.6.2'
+}
+tasks.withType(JavaExec) {
+    systemProperties += System.properties
+}
