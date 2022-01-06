@@ -19,6 +19,7 @@ public class EmailSender {
         props.put("mail.smtp.port", System.getProperty("SMTP_PORT"));
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.localhost", System.getenv("HOSTNAME"));
 
         //create Authenticator object to pass in Session.getInstance argument
         Authenticator auth = new Authenticator() {
